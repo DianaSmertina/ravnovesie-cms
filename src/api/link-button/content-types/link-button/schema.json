@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "link_buttons",
+  "info": {
+    "singularName": "link-button",
+    "pluralName": "link-buttons",
+    "displayName": "Link button"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fond_informations",
+  "info": {
+    "singularName": "fond-information",
+    "pluralName": "fond-informations",
+    "displayName": "Fond information"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    }
+  }
+}

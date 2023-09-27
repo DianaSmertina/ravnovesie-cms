@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_types",
+  "info": {
+    "singularName": "volunteer-type",
+    "pluralName": "volunteer-types",
+    "displayName": "Volunteer type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "responsibilities": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "help_steps",
+  "info": {
+    "singularName": "help-step",
+    "pluralName": "help-steps",
+    "displayName": "Help step"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

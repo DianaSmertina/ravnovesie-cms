@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_partners",
+  "info": {
+    "singularName": "media-partner",
+    "pluralName": "media-partners",
+    "displayName": "Media partner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
