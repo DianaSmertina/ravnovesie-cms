@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_section_programs",
+  "info": {
+    "displayName": "Section programs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "helpSteps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::help-step.help-step"
+    },
+    "linkButtons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link-button.link-button"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    }
+  }
+}

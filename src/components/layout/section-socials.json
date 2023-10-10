@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_section_socials",
+  "info": {
+    "displayName": "Section socials"
+  },
+  "options": {},
+  "attributes": {
+    "mediaPartners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::media-partner.media-partner"
+    }
+  }
+}

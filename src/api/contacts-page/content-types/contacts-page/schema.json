@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts_pages",
+  "info": {
+    "singularName": "contacts-page",
+    "pluralName": "contacts-pages",
+    "displayName": "Contacts page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::foundation-phone.foundation-phone"
+    },
+    "emails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::foundation-email.foundation-email"
+    },
+    "legalAddress": {
+      "type": "string"
+    },
+    "socialLinks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-link.social-link"
+    }
+  }
+}

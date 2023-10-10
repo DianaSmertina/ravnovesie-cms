@@ -676,30 +676,29 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactContact extends Schema.CollectionType {
-  collectionName: 'contacts';
+export interface ApiCommunityPageCommunityPage extends Schema.SingleType {
+  collectionName: 'community_pages';
   info: {
-    singularName: 'contact';
-    pluralName: 'contacts';
-    displayName: 'Contact';
+    singularName: 'community-page';
+    pluralName: 'community-pages';
+    displayName: 'Community page';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    contact: Attribute.String;
+    sectionVolunteerTypes: Attribute.Component<'layout.section-volunteer-types'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::contact.contact',
+      'api::community-page.community-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::contact.contact',
+      'api::community-page.community-page',
       'oneToOne',
       'admin::user'
     > &
@@ -707,13 +706,138 @@ export interface ApiContactContact extends Schema.CollectionType {
   };
 }
 
-export interface ApiFondInformationFondInformation
-  extends Schema.CollectionType {
-  collectionName: 'fond_informations';
+export interface ApiContactInformationContactInformation
+  extends Schema.SingleType {
+  collectionName: 'contact_informations';
   info: {
-    singularName: 'fond-information';
-    pluralName: 'fond-informations';
-    displayName: 'Fond information';
+    singularName: 'contact-information';
+    pluralName: 'contact-informations';
+    displayName: 'Contact information';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    mainEmail: Attribute.Relation<
+      'api::contact-information.contact-information',
+      'oneToOne',
+      'api::foundation-email.foundation-email'
+    >;
+    socialLinks: Attribute.Relation<
+      'api::contact-information.contact-information',
+      'oneToMany',
+      'api::social-link.social-link'
+    >;
+    mainPhone: Attribute.Relation<
+      'api::contact-information.contact-information',
+      'oneToOne',
+      'api::foundation-phone.foundation-phone'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-information.contact-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-information.contact-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactsPageContactsPage extends Schema.SingleType {
+  collectionName: 'contacts_pages';
+  info: {
+    singularName: 'contacts-page';
+    pluralName: 'contacts-pages';
+    displayName: 'Contacts page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Attribute.String;
+    phone: Attribute.Relation<
+      'api::contacts-page.contacts-page',
+      'oneToOne',
+      'api::foundation-phone.foundation-phone'
+    >;
+    emails: Attribute.Relation<
+      'api::contacts-page.contacts-page',
+      'oneToMany',
+      'api::foundation-email.foundation-email'
+    >;
+    legalAddress: Attribute.String;
+    socialLinks: Attribute.Relation<
+      'api::contacts-page.contacts-page',
+      'oneToMany',
+      'api::social-link.social-link'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contacts-page.contacts-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contacts-page.contacts-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFoundationEmailFoundationEmail
+  extends Schema.CollectionType {
+  collectionName: 'foundation_emails';
+  info: {
+    singularName: 'foundation-email';
+    pluralName: 'foundation-emails';
+    displayName: 'Foundation email';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::foundation-email.foundation-email',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::foundation-email.foundation-email',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFoundationLegalInformationFoundationLegalInformation
+  extends Schema.CollectionType {
+  collectionName: 'foundation_legal_informations';
+  info: {
+    singularName: 'foundation-legal-information';
+    pluralName: 'foundation-legal-informations';
+    displayName: 'Foundation legal information';
   };
   options: {
     draftAndPublish: true;
@@ -725,13 +849,44 @@ export interface ApiFondInformationFondInformation
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::fond-information.fond-information',
+      'api::foundation-legal-information.foundation-legal-information',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::fond-information.fond-information',
+      'api::foundation-legal-information.foundation-legal-information',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFoundationPhoneFoundationPhone
+  extends Schema.CollectionType {
+  collectionName: 'foundation_phones';
+  info: {
+    singularName: 'foundation-phone';
+    pluralName: 'foundation-phones';
+    displayName: 'Foundation phones';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    phone: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::foundation-phone.foundation-phone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::foundation-phone.foundation-phone',
       'oneToOne',
       'admin::user'
     > &
@@ -800,12 +955,47 @@ export interface ApiLinkButtonLinkButton extends Schema.CollectionType {
   };
 }
 
+export interface ApiMainPageMainPage extends Schema.SingleType {
+  collectionName: 'main_pages';
+  info: {
+    singularName: 'main-page';
+    pluralName: 'main-pages';
+    displayName: 'Main page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sectionPrograms: Attribute.Component<'layout.section-programs'>;
+    sectionOurTeam: Attribute.Component<'layout.section-our-team'>;
+    sectionDonation: Attribute.Component<'layout.section-donation'>;
+    sectionSocials: Attribute.Component<'layout.section-socials'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::main-page.main-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::main-page.main-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMediaPartnerMediaPartner extends Schema.CollectionType {
   collectionName: 'media_partners';
   info: {
     singularName: 'media-partner';
     pluralName: 'media-partners';
     displayName: 'Media partner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -813,6 +1003,7 @@ export interface ApiMediaPartnerMediaPartner extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     logo: Attribute.Media;
+    sortIndex: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -824,6 +1015,111 @@ export interface ApiMediaPartnerMediaPartner extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::media-partner.media-partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgramProgram extends Schema.CollectionType {
+  collectionName: 'programs';
+  info: {
+    singularName: 'program';
+    pluralName: 'programs';
+    displayName: 'Program';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::program.program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::program.program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Project';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    programs: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::program.program'
+    >;
+    link: Attribute.String;
+    additionalInfoTitle: Attribute.String;
+    additionalInfoDescription: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectsPageProjectsPage extends Schema.SingleType {
+  collectionName: 'projects_pages';
+  info: {
+    singularName: 'projects-page';
+    pluralName: 'projects-pages';
+    displayName: 'Projects page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projects: Attribute.Relation<
+      'api::projects-page.projects-page',
+      'oneToMany',
+      'api::project.project'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::projects-page.projects-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::projects-page.projects-page',
       'oneToOne',
       'admin::user'
     > &
@@ -855,6 +1151,70 @@ export interface ApiReportReport extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::report.report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReportsPageReportsPage extends Schema.SingleType {
+  collectionName: 'reports_pages';
+  info: {
+    singularName: 'reports-page';
+    pluralName: 'reports-pages';
+    displayName: 'Reports page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    sectionReports: Attribute.Component<'layout.section-reports'>;
+    sectionLegalInfo: Attribute.Component<'layout.section-legal-info'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::reports-page.reports-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::reports-page.reports-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialLinkSocialLink extends Schema.CollectionType {
+  collectionName: 'social_links';
+  info: {
+    singularName: 'social-link';
+    pluralName: 'social-links';
+    displayName: 'Social link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    imageColor: Attribute.Media;
+    imageBlack: Attribute.Media;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-link.social-link',
       'oneToOne',
       'admin::user'
     > &
@@ -942,12 +1302,22 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::contact.contact': ApiContactContact;
-      'api::fond-information.fond-information': ApiFondInformationFondInformation;
+      'api::community-page.community-page': ApiCommunityPageCommunityPage;
+      'api::contact-information.contact-information': ApiContactInformationContactInformation;
+      'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
+      'api::foundation-email.foundation-email': ApiFoundationEmailFoundationEmail;
+      'api::foundation-legal-information.foundation-legal-information': ApiFoundationLegalInformationFoundationLegalInformation;
+      'api::foundation-phone.foundation-phone': ApiFoundationPhoneFoundationPhone;
       'api::help-step.help-step': ApiHelpStepHelpStep;
       'api::link-button.link-button': ApiLinkButtonLinkButton;
+      'api::main-page.main-page': ApiMainPageMainPage;
       'api::media-partner.media-partner': ApiMediaPartnerMediaPartner;
+      'api::program.program': ApiProgramProgram;
+      'api::project.project': ApiProjectProject;
+      'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
       'api::report.report': ApiReportReport;
+      'api::reports-page.reports-page': ApiReportsPageReportsPage;
+      'api::social-link.social-link': ApiSocialLinkSocialLink;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::volunteer-type.volunteer-type': ApiVolunteerTypeVolunteerType;
     }

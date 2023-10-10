@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_section_donations",
+  "info": {
+    "displayName": "Section Donation"
+  },
+  "options": {},
+  "attributes": {
+    "qr": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

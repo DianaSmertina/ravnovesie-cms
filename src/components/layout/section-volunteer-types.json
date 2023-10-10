@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_section_volunteer_types",
+  "info": {
+    "displayName": "Section volunteer types"
+  },
+  "options": {},
+  "attributes": {
+    "volunteerTypes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::volunteer-type.volunteer-type"
+    }
+  }
+}

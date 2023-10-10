@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_section_our_teams",
+  "info": {
+    "displayName": "Section our team"
+  },
+  "options": {},
+  "attributes": {
+    "teamMembers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
+    }
+  }
+}

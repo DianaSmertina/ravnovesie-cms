@@ -4,7 +4,8 @@
   "info": {
     "singularName": "media-partner",
     "pluralName": "media-partners",
-    "displayName": "Media partner"
+    "displayName": "Media partner",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,18 @@
       "type": "string"
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "sortIndex": {
+      "type": "integer"
     }
   }
 }

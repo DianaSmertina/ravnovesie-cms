@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "reports_pages",
+  "info": {
+    "singularName": "reports-page",
+    "pluralName": "reports-pages",
+    "displayName": "Reports page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionReports": {
+      "displayName": "Section reports",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.section-reports"
+    },
+    "sectionLegalInfo": {
+      "displayName": "Section Legal Info",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.section-legal-info"
+    }
+  }
+}

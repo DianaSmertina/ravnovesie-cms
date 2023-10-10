@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_section_legal_infos",
+  "info": {
+    "displayName": "Section Legal Info"
+  },
+  "options": {},
+  "attributes": {
+    "legalInformation": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::foundation-legal-information.foundation-legal-information"
+    }
+  }
+}

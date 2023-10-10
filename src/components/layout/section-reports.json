@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_section_reports",
+  "info": {
+    "displayName": "Section reports"
+  },
+  "options": {},
+  "attributes": {
+    "reports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::report.report"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "foundation_emails",
+  "info": {
+    "singularName": "foundation-email",
+    "pluralName": "foundation-emails",
+    "displayName": "Foundation email"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_pages",
+  "info": {
+    "singularName": "main-page",
+    "pluralName": "main-pages",
+    "displayName": "Main page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionPrograms": {
+      "displayName": "Section programs",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.section-programs"
+    },
+    "sectionOurTeam": {
+      "displayName": "Section our team",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.section-our-team"
+    },
+    "sectionDonation": {
+      "displayName": "Section Donation",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.section-donation"
+    },
+    "sectionSocials": {
+      "displayName": "Section socials",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.section-socials"
+    }
+  }
+}
